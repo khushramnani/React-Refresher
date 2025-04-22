@@ -3,7 +3,7 @@ import {createBrowserRouter , RouterProvider} from "react-router-dom"
 import Mainlayout from "./layout/Mainlayout";
 import FetchOld from "./Components/FetchOld";
 import FetchQueryContainer from "./Components/FetchQuery";
-
+import Fetchindv from "./Components/Fetchindv";
 const routes = createBrowserRouter([{
     path:"/",
     element: <Mainlayout/>,
@@ -15,6 +15,10 @@ const routes = createBrowserRouter([{
         {
             path:"/fetchwith-tq",
             element:<FetchQueryContainer/>
+        },
+        {
+            path:"/fetchindv/:id",
+            element:<Fetchindv/>
         }
 ]
 }])

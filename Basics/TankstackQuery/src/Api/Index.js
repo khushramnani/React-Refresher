@@ -11,3 +11,13 @@ export const fetchPost = async () => {
   
 }
 
+export  const fetchIndv = async (id)=>{
+  try {
+    const res = await api.get(`posts/${id}`)
+    return res.status === 200 ? res.data : [] 
+  } catch (error) {
+    console.log(error);
+    
+  }
+   
+}

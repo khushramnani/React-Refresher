@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {NavLink} from 'react-router-dom'
 const Header = () => {
   return (
 <header class="text-gray-400 bg-gray-900 body-font w-full">
@@ -10,10 +10,10 @@ const Header = () => {
       </svg>
       <span class="ml-3 text-xl">Tailblocks</span>
     </a>
-    <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-      <a href='/' class="mr-5 hover:text-white">Home</a>
-      <a href='/fetchold'  class="mr-5 hover:text-white">Fetch Old</a>
-      <a  href='/fetchwith-tq' class="mr-5 hover:text-white">Fetch RQ</a>
+    <nav class="md:ml-auto flex gap-4 pr-2.5 flex-wrap items-center text-base justify-center">
+      <NavLink to={'/'} class="mr-5 hover:text-white">Home</NavLink>
+      <NavLink to={'/fetchold'}  class="mr-5 hover:text-white">Fetch Old</NavLink>
+      <NavLink  to={'/fetchwith-tq'} class="mr-5 hover:text-white">Fetch RQ</NavLink>
       
     </nav>
     <button class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">Button

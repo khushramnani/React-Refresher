@@ -8,6 +8,7 @@ const Card = (props) => {
       {/* <img className="lg:h-48 md:h-36 w-full object-cover object-center" src="https://dummyimage.com/720x400" alt="blog" /> */}
       <div className="p-6">
         {/* <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"></h2> */}
+        <h3 className="title-font text-lg font-medium text-white mb-3">{props.id}</h3>
         <h1 className="title-font text-lg font-medium text-white mb-3">{props.title}</h1>
         <p className="leading-relaxed mb-3">{props.body}</p>
         <div className="flex items-center flex-wrap ">

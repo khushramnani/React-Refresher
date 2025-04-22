@@ -3,7 +3,7 @@ import { useState,useEffect } from 'react'
 import Card from '../UI/Card'
 import { fetchPost } from '../Api/Index'
 import {useQuery , QueryClientProvider, QueryClient} from "@tanstack/react-query"
-
+import { NavLink } from 'react-router-dom'
 const queryclient = new QueryClient()
 
 const FetchQuery = () => {
@@ -23,7 +23,7 @@ const getPostData = async ()=>{
     }
 }
 
-const {data , isLoading} = useQuery({
+const {data , isLoading , isError} = useQuery({
     queryKey:["post"],
     queryFn:getPostData,
 })
@@ -37,9 +37,10 @@ if (!data || data.length === 0) return <div>No posts found.</div>;
    
     <div className='h-full  w-full grid grid-cols-3 grid-rows-1 items-center justify-center'>
 
-        {data.map((e)=>{
-            return  <Card key={e.id} title={e.title} body={e.body} />
-
+        {data.slice(0,10).map((e)=>{
+            return  <NavLink to={`/fetchindv/${e.id}`}>
+            <Card key={e.id} id={e.id} title={e.title} body={e.body} />
+            </NavLink>
         }) }
     </div>
   

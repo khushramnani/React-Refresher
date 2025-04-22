@@ -5,10 +5,10 @@ import Header from '../UI/Header'
 const Mainlayout = () => {
   return (
     <>
-    <div className='bg-gray-800 text-white  w-full '>
+    <div className='bg-gray-800 text-white h-full w-full '>
 
     <Header/>
-    <Outlet/>
+    <Outlet className="h-screen " />
     <Footer/>
     </div>
     </>
